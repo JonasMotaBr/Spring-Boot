@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JamTech Solft</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+
+
+
+	<!-- 		<form action="LoginServelet" method="post" class="login" onsubmit="return validarCampos();"> -->
+	<!-- 			> Login: <input type="text" id="login" name="login"> -->
+	<!-- 			<p /> -->
+	<!-- 			Senha: <input type="password" id="senha" name="senha"> -->
+	<!-- 			<p /> -->
+	<!-- 			<input type="submit" value="logar">  -->
+
+	<!-- 			<a href="cadastrarUsuario.jsp"><input type="button" value="cadastar"></a> -->
+
+	<!-- 		</form> -->
+
+
+
+	<div class="login">
+		<h1>Login</h1>
+		<form method="post" onsubmit="return validarCampos();">
+			<input type="text" name="u" placeholder="Login"
+				required="required" /> <input type="password" name="p"
+				placeholder="Senha" required="required" />
+			<button type="submit" class="btn btn-primary btn-block btn-large">Entrar.</button>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		function validarCampos() {
+			if (document.getElementById("login").value == '') {
+				alert('informe o login')
+				return false;
+			} else if (document.getElementById("senha").value == '') {
+				alert('informe a senha')
+				return false;
+			}
+
+		}
+	</script>
+
+</body>
+</html>

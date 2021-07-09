@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Telefones</title>
+</head>
+<body>
+
+    <table>
+       <tr th:each = "p : ${pessoaObj}">
+        <th>Id:</th>
+         <td th:text = ${p.id}></td>
+        <th>Nome:</th>
+           <td th:text = ${p.nome}></td>
+       </tr>
+       
+       <tr th:each = "fone : ${telefones}">
+          <th>Numero:</th>
+          <td th:text = ${fone.numero}></td>
+          <th>Tipo:</th>
+          <td th:text = ${fone.tipo}></td>
+          <td><a th:href="@{/removerTelefone/{numeroTelefone}(numeroTelefone=${fone.numero})}">Remover</a></td>
+       </tr>
+          
+     </table>
+     
+     
+     
+     <p>Cadastrar Telefone:</p>
+     <form th:action="@{/salvarTelefone/{pessoaid}(pessoaid=${pessoaObj.id})}" method="post" >
+	<label>Telefone:</label>
+	<input name="numero">
+	<label>Tipo</label>
+	<input name="tipo">
+	<input type="submit" value="Salvar">
+	</form>
+     
+     
+     	<a href="/lista">Lista de Pessoas</a>
+
+</body>
+</html>
